@@ -11,12 +11,12 @@ Header.Frame = function HeaderFrame({ children, restProps }) {
     return <Container {...restProps}>{children}</Container>
 };
 
-Header.Logo = function HeaderLogo({ to, children, restProps }) {
+Header.Logo = function HeaderLogo({ to, children, ...restProps }) {
     return (
         <ReactRouterLink to={to}>
             <Logo {...restProps} />
         </ReactRouterLink>
-    )
+    );
 };
 
 Header.ButtonLink = function HeaderButtonLink({ to, children, restProps }) {

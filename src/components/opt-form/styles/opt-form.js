@@ -14,7 +14,7 @@ export const Container = styled.div`
 `;
 
 export const Input = styled.input`
-    max-width: 450px;
+    max-width: 550px;
     width: 100%;
     border: 0;
     padding: 10px;
@@ -57,7 +57,7 @@ export const Button = styled.button`
 `;
 
 export const Text = styled.p`
-    font-size: 19.2px;
+    font-size: 17.2px;
     color: white;
     text-align: center;
 

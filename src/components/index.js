@@ -4,6 +4,7 @@ export { default as Footer } from './Footer';
 export { default as Accordion } from './Accordion';
 export { OptForm } from './opt-form';
 export { Header } from './Header';
+export { Feature } from './Feature';
 
 
 
