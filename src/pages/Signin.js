@@ -1,5 +1,14 @@
 // import React from 'react';
+import FooterContainer from '../container/Footer';
+import { HeaderContainer } from '../container/Header';
 
 export default function SignIn({ children, ...restProps }) {
-    return <p style={{ color: 'white' }}>Hello from Sign in!</p>
-};
+    return (
+        <>
+            <HeaderContainer>
+                Hello
+            </HeaderContainer>
+            <FooterContainer />
+        </>
+    );
+}
