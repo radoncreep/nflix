@@ -31,7 +31,7 @@ export default function useContent(target) {
             .catch((error) => {
                 console.log(error);
             });
-    });
+    }, []);
 
     // return a new object
     // target will come through as series or films
