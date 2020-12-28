@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 
-import { Background, Container, Logo, ButtonLink, Feature, Text, FeatureCallout, Link, Group, Picture, Profile, Dropdown, Search, SearchInput, SearchIcon } from './Styles/header';
+import { Background, Container, Logo, ButtonLink, Feature, Text, FeatureCallout, Link, Group, Picture, Profile, Dropdown, Search, SearchInput, SearchIcon, PlayButton } from './Styles/header';
 
 export const Header = ({ bg=true, children, ...restProps }) => {
     return bg ? <Background {...restProps}>{children}</Background> : children;
@@ -22,13 +22,13 @@ Header.Picture = ({ src, ...restProps}) => {
     return <Picture {...restProps} src={`/images/users/${src}.png`}/>
 };
 
-Header.Search = ({ searchTerm, setSearchTerm, ...restProps }) => {
+Header.Search = function GetSearch({ searchTerm, setSearchTerm, ...restProps }) {
     const [ searchActive, setSearchActive ] = useState(false);
 
     return (
         <Search {...restProps}>
             {/* used a callback to avoid batching of setting true and false of state */}
-            <SearchIcon onClick={() => setSearchTerm(searchActive => !searchActive)}>
+            <SearchIcon onClick={() => setSearchActive(searchActive => !searchActive)}>
                 <img src="/images/icons/search.png" alt="Search" />
             </SearchIcon>
             <SearchInput 
@@ -51,6 +51,10 @@ Header.Text = ({children, ...restProps}) => {
 Header.TextLink = ({children, ...restProps}) => {
     return <Link {...restProps}>{children}</Link>
 };
+
+Header.PlayButton = ({ children, ...restProps }) => {
+    return <PlayButton {...restProps}>{children}</PlayButton>
+}
 
 Header.Frame = ({ children, restProps }) => {
     return <Container {...restProps}>{children}</Container>
