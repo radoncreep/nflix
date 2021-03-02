@@ -21,7 +21,7 @@ Header.Logo = function HeaderLogo({ to, children, ...restProps }) {
 
 Header.ButtonLink = function HeaderButtonLink({ to, children, restProps }) {
     return (
-        <ButtonLink>
+        <ButtonLink to={to}>
             {children}
         </ButtonLink>    
     )
