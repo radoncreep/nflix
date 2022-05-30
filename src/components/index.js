@@ -6,6 +6,10 @@ export { OptForm } from './opt-form';
 export { Header } from './Header';
 export { Feature } from './Feature';
 export { default as Form } from './form';
+export { default as Profiles } from './Profiles';
+export { default as Loading } from './Loading';
+export { default as Card } from './Card';
+export { default as Player } from './Player';
 
 
 

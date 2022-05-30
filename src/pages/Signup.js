@@ -27,12 +27,14 @@ const Signup = () => {
             .auth()
             .createUserWithEmailAndPassword(emailAddress, password)
             .then((result) => { // updating the signed up user profile in firebase by setting using the following method
+                console.log(result)
                 result.user
                     .updateProfile({
                         displayName: firstname,
                         photoURL: Math.floor(Math.random() * 5) + 1,
                     })
-                    .then(() => {
+                    .then((user) => {
+                        console.log(user)
                         setFirstName('');
                         setEmailAddress('');
                         setPassword('');
@@ -90,15 +92,15 @@ const Signup = () => {
                             onChange={(event) => setPassword(event.target.value)}
                         />
                         <Form.Submit disabled={isInvalid} type="submit">
-                            Sign in
+                            Sign up
                         </Form.Submit>
                     </Form.Base>
 
                     <Form.Text>
-                        Already a user? <Form.Link to="/signup">Sign in now</Form.Link>
+                        Already a user? <Form.Link to="/signin">Sign in now</Form.Link>
                     </Form.Text>
                     <Form.SmallText>
-                        This page is protected by googl reCaptcha to ensure you're
+                        This page is protected by google reCaptcha to ensure you're
                         not a bot. Learn more.
                     </Form.SmallText>
                 </Form>
